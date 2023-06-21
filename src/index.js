@@ -1,15 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import ContextView from './views/ContextView';
-import ReduxView from './views/ReduxView';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { Provider } from 'react-redux';
-import store from './reduxStore';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RecoilRoot } from "recoil";
+import ContextView from "./views/ContextView";
+import ReduxView from "./views/ReduxView";
+import MobxView from "./views/MobxView";
+import RecoilView from "./views/RecoilView";
+import ZustandView from "./views/ZustandView";
 
 const router = createBrowserRouter([
   {
@@ -24,13 +23,25 @@ const router = createBrowserRouter([
     path: "/redux",
     element: <ReduxView />,
   },
+  {
+    path: "/mobx",
+    element: <MobxView />,
+  },
+  {
+    path: "/recoil",
+    element: <RecoilView />,
+  },
+  {
+    path: "/zustand",
+    element: <ZustandView />,
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <RecoilRoot>
       <RouterProvider router={router} />
-    </Provider>
+    </RecoilRoot>
   </React.StrictMode>
 );

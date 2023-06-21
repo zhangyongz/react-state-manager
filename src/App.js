@@ -12,6 +12,15 @@ const App = () => {
             <li>
               <Link to={`/redux`}>redux</Link>
             </li>
+            <li>
+              <Link to={`/mobx`}>mobx</Link>
+            </li>
+            <li>
+              <Link to={`/recoil`}>recoil</Link>
+            </li>
+            <li>
+              <Link to={`/zustand`}>zustand</Link>
+            </li>
           </ul>
         </nav>
     </div>

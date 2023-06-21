@@ -22,7 +22,7 @@ const Section1 = () => {
 
 const Section2 = () => {
   console.log('Section2');
-  // const { num2 } = useContext(scrollContext);
+  const { num2 } = useContext(scrollContext);
 
   const clickHandle = () => {
     console.log('btn2Click');
@@ -30,7 +30,7 @@ const Section2 = () => {
 
   return (
     <div className='btn' onClick={clickHandle}>
-      num2: {'num2'}
+      num2: {num2}
     </div>
   )
 }
