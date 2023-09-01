@@ -5,7 +5,7 @@ class Store {
   num2 = 0
 
   constructor() {
-      makeAutoObservable(this)
+    makeAutoObservable(this)
   }
 
   addNum1() {
