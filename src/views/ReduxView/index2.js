@@ -1,18 +1,23 @@
-import React from 'react';
-import { Provider, useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useReducer } from 'react';
 import store from "./store";
-import { increment1, selectCount1, selectCount2, incrementAsync } from "./store";
+import { increment1, incrementAsync } from "./store";
 
 const Section1 = () => {
   console.log('Section1');
 
-  const count1 = useSelector(selectCount1)
-  const dispatch = useDispatch()
+  const count1 = store.getState().count1
 
   const clickHandle = () => {
-    // dispatch(increment1(1));
-    dispatch(incrementAsync(1, 1000))
+    store.dispatch(incrementAsync(1, 1000))
   }
+
+  const [, update] = useReducer((counter) => counter + 1, 0)
+  useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      update()
+    })
+    return unsubscribe
+  }, [])
 
   return (
     <div className='btn' onClick={clickHandle}>
@@ -23,12 +28,10 @@ const Section1 = () => {
 
 const Section2 = () => {
   console.log('Section2');
-  const count2 = useSelector(selectCount2)
-
-  const dispatch = useDispatch()
+  const count2 = store.getState().count2
 
   const clickHandle = () => {
-    dispatch(increment1(1));
+    store.dispatch(increment1(1));
   }
 
   return (
@@ -40,10 +43,10 @@ const Section2 = () => {
 
 const ReduxView = () => {
   return (
-    <Provider store={store}>
+    <>
       <Section1 />
       <Section2 />
-    </Provider>
+    </>
   );
 }
 

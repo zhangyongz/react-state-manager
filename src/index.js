@@ -5,7 +5,8 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import ContextView from "./views/ContextView";
-import ReduxView from "./views/ReduxView";
+import ReduxView from "./views/ReduxView/index";
+// import ReduxView from "./views/ReduxView/index2";
 import MobxView from "./views/MobxView";
 import RecoilView from "./views/RecoilView";
 import ZustandView from "./views/ZustandView";
@@ -39,9 +40,9 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <RouterProvider router={router} />
-    </RecoilRoot>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <RecoilRoot>
+    <RouterProvider router={router} />
+  </RecoilRoot>
+  // </React.StrictMode>
 );

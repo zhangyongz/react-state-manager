@@ -4,10 +4,7 @@ import store from "./store";
 const Section1 = observer(() => {
   console.log('Section1');
 
-  // const { num, dispatch } = useContext(scrollContext);
-
   const clickHandle = () => {
-    console.log('btn1Click');
     store.addNum1();
   }
 
@@ -22,7 +19,6 @@ const Section2 = observer(() => {
   console.log('Section2');
 
   const clickHandle = () => {
-    console.log('btn2Click');
     store.addNum2();
   }
 
@@ -41,3 +37,5 @@ const MobxView = () => {
 }
 
 export default MobxView
+
+// https://mobx.js.org/react-integration.html
