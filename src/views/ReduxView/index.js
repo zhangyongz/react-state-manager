@@ -10,8 +10,7 @@ const Section1 = () => {
   const dispatch = useDispatch()
 
   const clickHandle = () => {
-    // dispatch(increment1(1));
-    dispatch(incrementAsync(1, 1000))
+    dispatch(increment1(1));
   }
 
   return (
@@ -28,7 +27,7 @@ const Section2 = () => {
   const dispatch = useDispatch()
 
   const clickHandle = () => {
-    dispatch(increment1(1));
+    dispatch(incrementAsync(1, 1000));
   }
 
   return (

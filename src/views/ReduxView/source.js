@@ -2,7 +2,7 @@ import { createContext, useMemo, useReducer, useContext, useRef, useLayoutEffect
 
 const ReactReduxContext = createContext(null);
 
-// 传递给 provider 的是 store 实例本身
+// instance
 const Provider = ({ store, children }) => {
   const contextValue = useMemo(() => {
       return {

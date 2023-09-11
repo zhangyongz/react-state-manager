@@ -94,3 +94,4 @@ export default create;
 // https://github.com/facebook/react/blob/main/packages/use-sync-external-store/src/useSyncExternalStoreWithSelector.js
 // https://github.com/facebook/react/blob/main/packages/use-sync-external-store/src/useSyncExternalStoreShimClient.js
 // https://react.dev/reference/react/useSyncExternalStore
+// https://docs.pmnd.rs/zustand/getting-started/comparison

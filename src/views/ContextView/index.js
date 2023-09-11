@@ -7,7 +7,6 @@ const Section1 = () => {
   const { num, dispatch } = useContext(scrollContext);
 
   const clickHandle = () => {
-    console.log('btn1Click');
     dispatch({
       type: 'add'
     })
@@ -24,7 +23,7 @@ const Section1 = () => {
 // refer num2
 const Section2 = () => {
   console.log('Section2');
-  const { num } = useContext(scrollContext);
+  const { num1 } = useContext(scrollContext);
 
   const clickHandle = () => {
     console.log('btn2Click');
@@ -32,7 +31,7 @@ const Section2 = () => {
 
   return (
     <div className='btn' onClick={clickHandle}>
-      num2: {num}
+      num2: {num1}
     </div>
   )
 }

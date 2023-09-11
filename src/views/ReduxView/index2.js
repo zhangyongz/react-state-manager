@@ -8,7 +8,7 @@ const Section1 = () => {
   const count1 = store.getState().count1
 
   const clickHandle = () => {
-    store.dispatch(incrementAsync(1, 1000))
+    store.dispatch(increment1(1))
   }
 
   const [, update] = useReducer((counter) => counter + 1, 0)
@@ -31,8 +31,16 @@ const Section2 = () => {
   const count2 = store.getState().count2
 
   const clickHandle = () => {
-    store.dispatch(increment1(1));
+    store.dispatch(incrementAsync(1, 1000));
   }
+
+  // const [, update] = useReducer((counter) => counter + 1, 0)
+  // useEffect(() => {
+  //   const unsubscribe = store.subscribe(() => {
+  //     update()
+  //   })
+  //   return unsubscribe
+  // }, [])
 
   return (
     <div className='btn' onClick={clickHandle}>

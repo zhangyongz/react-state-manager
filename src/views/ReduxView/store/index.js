@@ -25,7 +25,7 @@ export const selectCount2 = (state) => state.count2
 
 function reducer(preState = initState, action) {
   const { type, data } = action;
-  console.log('type: ' + type);
+  // console.log('type: ' + type);
   switch (type) {
     case INCREMENT1:
       return {
