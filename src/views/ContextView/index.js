@@ -1,4 +1,4 @@
-import React, { useContext, useState, useMemo, useReducer } from 'react'
+import React, { useContext, useMemo, useReducer } from 'react'
 import { scrollContext } from './context';
 
 const Section1 = () => {
@@ -23,15 +23,11 @@ const Section1 = () => {
 // refer num2
 const Section2 = () => {
   console.log('Section2');
-  const { num1 } = useContext(scrollContext);
-
-  const clickHandle = () => {
-    console.log('btn2Click');
-  }
+  const { num } = useContext(scrollContext);
 
   return (
-    <div className='btn' onClick={clickHandle}>
-      num2: {num1}
+    <div className='btn'>
+      num2: {num}
     </div>
   )
 }
@@ -59,20 +55,11 @@ const MyProvider = ({ children }) => {
 };
 
 const ContextView = () => {
-  const [num1, setNum1] = useState(0)
-  
-  const clickHandle = () => {
-    setNum1(num1 + 1)
-  }
-
   return (
     <div className="App">
       <MyProvider>
         <Section1 />
         <Section2 />
-        <div className='btn' onClick={clickHandle}>
-          btn3
-        </div>
       </MyProvider>
     </div>
   );

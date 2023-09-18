@@ -34,13 +34,13 @@ const Section2 = () => {
     store.dispatch(incrementAsync(1, 1000));
   }
 
-  // const [, update] = useReducer((counter) => counter + 1, 0)
-  // useEffect(() => {
-  //   const unsubscribe = store.subscribe(() => {
-  //     update()
-  //   })
-  //   return unsubscribe
-  // }, [])
+  const [, update] = useReducer((counter) => counter + 1, 0)
+  useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      update()
+    })
+    return unsubscribe
+  }, [])
 
   return (
     <div className='btn' onClick={clickHandle}>

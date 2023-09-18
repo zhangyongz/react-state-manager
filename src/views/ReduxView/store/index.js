@@ -1,6 +1,9 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 
+export const selectCount1 = (state) => state.count1
+export const selectCount2 = (state) => state.count2
+
 const INCREMENT1 = 'increment1';
 const INCREMENT2 = 'increment2';
 
@@ -19,9 +22,6 @@ const initState = {
   count1: 1,
   count2: 2
 };
-
-export const selectCount1 = (state) => state.count1
-export const selectCount2 = (state) => state.count2
 
 function reducer(preState = initState, action) {
   const { type, data } = action;
